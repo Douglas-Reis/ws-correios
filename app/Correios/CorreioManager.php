@@ -14,7 +14,14 @@ class CorreioManager
     protected function getAvailableProviders(): Collection
     {
         return collect($this->availableProviders)->mapWithKeys(function ($class){
-            
+            $instance = app($class);
+            return [$instance->getName() => $instance];
         });
     }
+
+    public function provider ($name)
+    {    
+        return $this->getAvailableProviders()
+            ->getName($name);
+    }   
 }
