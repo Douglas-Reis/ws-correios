@@ -19,9 +19,9 @@ class CorreioManager
         });
     }
 
-    public function provider ($name)
+    public function provider($name)
     {    
         return $this->getAvailableProviders()
-            ->getName($name);
+            ->get($name);
     }   
 }
