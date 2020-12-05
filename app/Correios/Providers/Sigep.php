@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Correios\Providers;
-class Sigep extends Provider
+
+use App\Contracts\CorreioProvider as CorreioProviderContract;
+
+class Sigep extends Provider implements CorreioProviderContract
 {
     const URL = 'https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl';
 
